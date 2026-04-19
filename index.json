@@ -1,0 +1,97 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-04-19T23:33:06.282092",
+  "categories": {
+    "default": {
+      "count": 6,
+      "nodes": [
+        "file-info-node",
+        "file-input-node",
+        "path-collector",
+        "pil-image-resize",
+        "string-input",
+        "svn-upload"
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "id": "file-info-node",
+      "name": "File Info",
+      "version": "1.1.0",
+      "author": "system",
+      "description": "读取文件基本信息（名称、路径、大小、尺寸、页数、字数等），支持接收上游文件路径并输出为独立字段。",
+      "category": "default",
+      "tags": [],
+      "rating": 0.0,
+      "downloads": 0,
+      "icon": "nodes/default/file-info-node/icon.png",
+      "manifestUrl": "nodes/default/file-info-node/manifest.json"
+    },
+    {
+      "id": "file-input-node",
+      "name": "File Input",
+      "version": "1.0.0",
+      "author": "system",
+      "description": "文件输入节点 - 统一处理各种文件输入方式。支持文件夹、文件列表、网络路径，支持按扩展名过滤、文件数量限制、去重等。",
+      "category": "default",
+      "tags": [],
+      "rating": 0.0,
+      "downloads": 0,
+      "icon": "nodes/default/file-input-node/icon.png",
+      "manifestUrl": "nodes/default/file-input-node/manifest.json"
+    },
+    {
+      "id": "path-collector",
+      "name": "Path Collector",
+      "version": "1.0.0",
+      "author": "builtin",
+      "description": "将多条连线传入的文件路径收集为列表，供下游节点（如 SVN Upload）批量使用",
+      "category": "default",
+      "tags": [],
+      "rating": 0.0,
+      "downloads": 0,
+      "icon": "nodes/default/path-collector/icon.png",
+      "manifestUrl": "nodes/default/path-collector/manifest.json"
+    },
+    {
+      "id": "pil-image-resize",
+      "name": "Image Resize (PIL)",
+      "version": "2.0.0",
+      "author": "resizepic_fluent",
+      "description": "图片缩放节点，支持像素/百分比、stretch/fit/fill 三种缩放模式和多种插值算法。fit 模式可选黑/白/透明填充。",
+      "category": "default",
+      "tags": [],
+      "rating": 0.0,
+      "downloads": 0,
+      "icon": "nodes/default/pil-image-resize/icon.png",
+      "manifestUrl": "nodes/default/pil-image-resize/manifest.json"
+    },
+    {
+      "id": "string-input",
+      "name": "String Input",
+      "version": "1.0.0",
+      "author": "user",
+      "description": "字符串输入节点：提供一个文本输入框并输出字符串值。",
+      "category": "default",
+      "tags": [],
+      "rating": 0.0,
+      "downloads": 0,
+      "icon": "nodes/default/string-input/icon.png",
+      "manifestUrl": "nodes/default/string-input/manifest.json"
+    },
+    {
+      "id": "svn-upload",
+      "name": "SVN Upload",
+      "version": "1.0.0",
+      "author": "builtin",
+      "description": "将文件列表提交到 SVN 仓库（svn add + svn commit）",
+      "category": "default",
+      "tags": [],
+      "rating": 0.0,
+      "downloads": 0,
+      "icon": "nodes/default/svn-upload/icon.png",
+      "manifestUrl": "nodes/default/svn-upload/manifest.json"
+    }
+  ]
+}

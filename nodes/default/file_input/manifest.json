@@ -1,0 +1,90 @@
+{
+  "id": "file-input-node",
+  "name": "File Input",
+  "author": "system",
+  "version": "1.0.0",
+  "description": "文件输入节点 - 统一处理各种文件输入方式。支持文件夹、文件列表、网络路径，支持按扩展名过滤、文件数量限制、去重等。",
+  "category": "Input",
+  "node_class": "FileInputNode",
+  "inputs": [
+    {
+      "name": "input_paths",
+      "type": "FILES",
+      "description": "输入的文件或文件夹路径（由拖拽自动传入）"
+    },
+    {
+      "name": "extensions",
+      "type": "STRING",
+      "default": "jpg,jpeg,png,gif,bmp,webp,tiff",
+      "description": "要处理的文件扩展名，用逗号分隔。留空则处理所有文件。"
+    },
+    {
+      "name": "recursive",
+      "type": "BOOLEAN",
+      "default": true,
+      "description": "是否递归扫描子文件夹"
+    },
+    {
+      "name": "max_files",
+      "type": "INT",
+      "default": 0,
+      "min": 0,
+      "max": 99999,
+      "step": 1,
+      "description": "最大文件数量。0 表示不限制"
+    },
+    {
+      "name": "sort_by",
+      "type": "STRING",
+      "default": "name",
+      "description": "排序方式: name(文件名), date(修改时间), size(文件大小), random(随机)"
+    },
+    {
+      "name": "dedup",
+      "type": "BOOLEAN",
+      "default": true,
+      "description": "是否按完整路径去重"
+    },
+    {
+      "name": "mode",
+      "type": "STRING",
+      "default": "pipeline",
+      "description": "模式: pipeline(管道模式), throttle(截流模式)"
+    },
+    {
+      "name": "throttle_count",
+      "type": "INT",
+      "default": 0,
+      "min": 0,
+      "max": 99999,
+      "step": 1,
+      "description": "截流数量阈值"
+    },
+    {
+      "name": "throttle_timeout",
+      "type": "FLOAT",
+      "default": 5.0,
+      "min": 0.0,
+      "max": 300.0,
+      "step": 0.1,
+      "description": "截流超时（秒）"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "files",
+      "type": "FILES",
+      "description": "处理后的文件路径列表"
+    },
+    {
+      "name": "count",
+      "type": "INT",
+      "description": "文件数量"
+    },
+    {
+      "name": "summary",
+      "type": "STRING",
+      "description": "处理摘要信息"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "pixore-node-repository",
+  "version": "1.0.0",
+  "description": "在线节点仓库 - 为客户端提供远程下载和管理",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/pixore-node"
+  },
+  "scripts": {
+    "start": "python api/server.py",
+    "generate-index": "python scripts/generate_index.py",
+    "validate": "python scripts/generate_index.py validate",
+    "dev": "python api/server.py --debug"
+  },
+  "keywords": [
+    "node",
+    "repository",
+    "api",
+    "pixore"
+  ],
+  "engines": {
+    "python": ">=3.8"
+  }
+}

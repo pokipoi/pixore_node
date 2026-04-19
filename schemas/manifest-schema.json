@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Node Manifest Schema",
+  "description": "节点 manifest.json 的 Schema 定义",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "author",
+    "version",
+    "description",
+    "category",
+    "entry_point",
+    "node_class"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "节点唯一标识，使用 kebab-case"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "节点显示名称"
+    },
+    "author": {
+      "type": "string",
+      "description": "作者/发布者名称"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "遵循 Semantic Versioning"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "简短描述（列表视图用）"
+    },
+    "longDescription": {
+      "type": "string",
+      "description": "详细描述，支持 Markdown（详情视图用）"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["inputs", "processing", "outputs", "utilities", "other"],
+      "description": "节点分类"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "搜索标签"
+    },
+    "icon": {
+      "type": "string",
+      "description": "节点图标路径（相对于节点文件夹）"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "官方网站"
+    },
+    "documentation": {
+      "type": "string",
+      "format": "uri",
+      "description": "文档链接"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "description": "源代码仓库"
+    },
+    "license": {
+      "type": "string",
+      "description": "许可证，如 MIT, Apache-2.0 等"
+    },
+    "entry_point": {
+      "type": "string",
+      "description": "入口文件路径"
+    },
+    "node_class": {
+      "type": "string",
+      "description": "节点类名"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/port"
+      },
+      "description": "输入端口定义"
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/port"
+      },
+      "description": "输出端口定义"
+    },
+    "properties": {
+      "type": "object",
+      "description": "节点属性/配置"
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "依赖库版本要求"
+    },
+    "pythonVersion": {
+      "type": "string",
+      "description": "最低 Python 版本要求，如 '3.8'"
+    },
+    "screenshots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "caption": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "截图列表"
+    }
+  },
+  "definitions": {
+    "port": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "端口名称"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "STRING",
+            "NUMBER",
+            "BOOLEAN",
+            "IMAGE",
+            "FILE",
+            "JSON",
+            "ARRAY",
+            "ANY"
+          ],
+          "description": "数据类型"
+        },
+        "description": {
+          "type": "string",
+          "description": "端口描述"
+        },
+        "default": {
+          "description": "默认值"
+        },
+        "multiline": {
+          "type": "boolean",
+          "description": "是否为多行输入（STRING 类型）"
+        },
+        "required": {
+          "type": "boolean",
+          "default": false,
+          "description": "是否必需"
+        }
+      }
+    }
+  }
+}
