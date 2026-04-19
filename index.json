@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-04-19T23:33:06.282092",
+  "generated": "2026-04-20T00:01:44.229799",
   "categories": {
     "default": {
       "count": 6,
@@ -26,7 +26,8 @@
       "rating": 0.0,
       "downloads": 0,
       "icon": "nodes/default/file-info-node/icon.png",
-      "manifestUrl": "nodes/default/file-info-node/manifest.json"
+      "manifestUrl": "nodes/default/file-info-node/manifest.json",
+      "readmeUrl": "nodes/default/file-info-node/README.md"
     },
     {
       "id": "file-input-node",
@@ -39,7 +40,8 @@
       "rating": 0.0,
       "downloads": 0,
       "icon": "nodes/default/file-input-node/icon.png",
-      "manifestUrl": "nodes/default/file-input-node/manifest.json"
+      "manifestUrl": "nodes/default/file-input-node/manifest.json",
+      "readmeUrl": "nodes/default/file-input-node/README.md"
     },
     {
       "id": "path-collector",
@@ -52,7 +54,8 @@
       "rating": 0.0,
       "downloads": 0,
       "icon": "nodes/default/path-collector/icon.png",
-      "manifestUrl": "nodes/default/path-collector/manifest.json"
+      "manifestUrl": "nodes/default/path-collector/manifest.json",
+      "readmeUrl": "nodes/default/path-collector/README.md"
     },
     {
       "id": "pil-image-resize",
@@ -65,7 +68,8 @@
       "rating": 0.0,
       "downloads": 0,
       "icon": "nodes/default/pil-image-resize/icon.png",
-      "manifestUrl": "nodes/default/pil-image-resize/manifest.json"
+      "manifestUrl": "nodes/default/pil-image-resize/manifest.json",
+      "readmeUrl": "nodes/default/pil-image-resize/README.md"
     },
     {
       "id": "string-input",
@@ -78,7 +82,8 @@
       "rating": 0.0,
       "downloads": 0,
       "icon": "nodes/default/string-input/icon.png",
-      "manifestUrl": "nodes/default/string-input/manifest.json"
+      "manifestUrl": "nodes/default/string-input/manifest.json",
+      "readmeUrl": "nodes/default/string-input/README.md"
     },
     {
       "id": "svn-upload",
@@ -91,7 +96,8 @@
       "rating": 0.0,
       "downloads": 0,
       "icon": "nodes/default/svn-upload/icon.png",
-      "manifestUrl": "nodes/default/svn-upload/manifest.json"
+      "manifestUrl": "nodes/default/svn-upload/manifest.json",
+      "readmeUrl": "nodes/default/svn-upload/README.md"
     }
   ]
 }

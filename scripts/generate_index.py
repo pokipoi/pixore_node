@@ -77,9 +77,11 @@ def generate_index(nodes_dir: Path, output_file: Path, github_user: Optional[str
                     base_url = f"https://raw.githubusercontent.com/{github_user}/pixore_node/main"
                     node_entry['icon'] = f"{base_url}/nodes/{category}/{node_id}/icon.png"
                     node_entry['manifestUrl'] = f"{base_url}/nodes/{category}/{node_id}/manifest.json"
+                    node_entry['readmeUrl'] = f"{base_url}/nodes/{category}/{node_id}/README.md"
                 else:
                     node_entry['icon'] = f"nodes/{category}/{node_id}/icon.png"
                     node_entry['manifestUrl'] = f"nodes/{category}/{node_id}/manifest.json"
+                    node_entry['readmeUrl'] = f"nodes/{category}/{node_id}/README.md"
                 
                 index['nodes'].append(node_entry)
                 category_nodes.append(node_id)

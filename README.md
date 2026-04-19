@@ -55,10 +55,12 @@ pixore_node/
   "version": "1.0.0",
   "downloads": 23567,
   "icon": "icon.png",
-  "shortDescription": "字符串输入节点",
+  "description": "字符串输入节点",
   "category": "inputs",
   "rating": 4.8,
-  "tags": ["input", "text"]
+  "tags": ["input", "text"],
+  "manifestUrl": "nodes/inputs/string-input/manifest.json",
+  "readmeUrl": "nodes/inputs/string-input/README.md"
 }
 ```
 
@@ -89,6 +91,14 @@ https://raw.githubusercontent.com/YOUR_USERNAME/pixore_node/main/index.json
 https://raw.githubusercontent.com/YOUR_USERNAME/pixore_node/main/nodes/{category}/{node-id}/manifest.json
 ```
 
+### 获取节点文档
+
+每个节点包含 README.md 文档，可通过 index.json 的 `readmeUrl` 字段快速访问：
+
+```
+https://raw.githubusercontent.com/YOUR_USERNAME/pixore_node/main/nodes/{category}/{node-id}/README.md
+```
+
 ### 下载节点
 
 ```
@@ -103,6 +113,7 @@ https://github.com/YOUR_USERNAME/pixore_node/archive/main.zip
 |------|-----|
 | 节点索引 | `https://raw.githubusercontent.com/{user}/{repo}/main/index.json` |
 | 节点详情 | `https://raw.githubusercontent.com/{user}/{repo}/main/nodes/{category}/{node-id}/manifest.json` |
+| 节点文档 | `https://raw.githubusercontent.com/{user}/{repo}/main/nodes/{category}/{node-id}/README.md` |
 | 节点图标 | `https://raw.githubusercontent.com/{user}/{repo}/main/nodes/{category}/{node-id}/icon.png` |
 | 节点代码 | `https://raw.githubusercontent.com/{user}/{repo}/main/nodes/{category}/{node-id}/main.py` |
 

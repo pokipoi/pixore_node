@@ -53,7 +53,8 @@ pixore_node/
   "downloads": 23567,
   "tags": ["input", "text"],
   "icon": "https://raw.githubusercontent.com/.../icon.png",
-  "manifestUrl": "https://raw.githubusercontent.com/.../manifest.json"
+  "manifestUrl": "https://raw.githubusercontent.com/.../manifest.json",
+  "readmeUrl": "https://raw.githubusercontent.com/.../README.md"
 }
 ```
 
@@ -145,6 +146,7 @@ https://raw.githubusercontent.com/{user}/{repo}/main/{path}
 |------|-----|
 | 索引 | `.../index.json` |
 | 详情 | `.../nodes/inputs/string-input/manifest.json` |
+| 文档 | `.../nodes/inputs/string-input/README.md` |
 | 图标 | `.../nodes/inputs/string-input/icon.png` |
 | 代码 | `.../nodes/inputs/string-input/main.py` |
 

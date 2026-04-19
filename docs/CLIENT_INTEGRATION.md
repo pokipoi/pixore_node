@@ -44,7 +44,9 @@ https://raw.githubusercontent.com/YOUR_USERNAME/pixore_node/main/index.json
       "icon": "https://raw.githubusercontent.com/YOUR_USERNAME/pixore_node/main/nodes/inputs/string-input/icon.png",
       "rating": 4.8,
       "downloads": 23567,
-      "tags": ["input", "text"]
+      "tags": ["input", "text"],
+      "manifestUrl": "https://raw.githubusercontent.com/YOUR_USERNAME/pixore_node/main/nodes/inputs/string-input/manifest.json",
+      "readmeUrl": "https://raw.githubusercontent.com/YOUR_USERNAME/pixore_node/main/nodes/inputs/string-input/README.md"
     }
   ]
 }
@@ -118,6 +120,54 @@ async function filterNodes(category = null, search = null) {
 const nodes = await getNodeList();
 const inputNodes = await filterNodes('inputs');
 const imageNodes = await filterNodes(null, 'image');
+```
+
+## 📄 获取节点文档（README）
+
+### URL
+
+```
+https://raw.githubusercontent.com/YOUR_USERNAME/pixore_node/main/nodes/{category}/{node-id}/README.md
+```
+
+### 说明
+
+每个节点都包含一个 README.md 文档，可以从 index.json 的 `readmeUrl` 字段快速访问，或直接构造 URL。
+
+### Python 示例
+
+```python
+def get_node_readme(node):
+    """获取节点文档"""
+    readme_url = node.get('readmeUrl')
+    if readme_url:
+        response = requests.get(readme_url)
+        return response.text
+    return None
+
+# 使用
+nodes = get_node_list()
+first_node = nodes['nodes'][0]
+readme = get_node_readme(first_node)
+print(readme)
+```
+
+### JavaScript 示例
+
+```javascript
+async function getNodeReadme(node) {
+  const readmeUrl = node.readmeUrl;
+  if (readmeUrl) {
+    const response = await fetch(readmeUrl);
+    return response.text();
+  }
+  return null;
+}
+
+// 使用
+const nodes = await getNodeList();
+const readme = await getNodeReadme(nodes.nodes[0]);
+console.log(readme);
 ```
 
 ## 📄 获取节点详情（详情样式）
@@ -233,8 +283,13 @@ class NodeRepositoryClient:
         url = f"{self.repo_url}/nodes/{category}/{node_id}/manifest.json"
         response = requests.get(url)
         response.raise_for_status()
-        return response.json()
-    
+        return response.json()    
+    def get_node_readme(self, category, node_id):
+        """获取节点 README 文档"""
+        url = f"{self.repo_url}/nodes/{category}/{node_id}/README.md"
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.text()    
     def get_categories(self) -> Dict:
         """获取分类统计"""
         data = self.get_all_nodes()
@@ -270,6 +325,11 @@ if __name__ == '__main__':
         print(f"\n详情: {detail['name']}")
         print(f"作者: {detail['author']}")
         print(f"输入: {detail.get('inputs', [])}")
+        
+        # 获取 README 文档
+        readme = client.get_node_readme(input_nodes[0]['category'], input_nodes[0]['id'])
+        print(f"\nREADME 长度: {len(readme)} 字符")
+        print(f"README 前 200 字:\n{readme[:200]}...")
 ```
 
 ### JavaScript/前端框架
@@ -311,6 +371,12 @@ class NodeRepositoryClient {
     const url = `${this.repoUrl}/nodes/${category}/${nodeId}/manifest.json`;
     const res = await fetch(url);
     return res.json();
+  }
+
+  async getNodeReadme(category, nodeId) {
+    const url = `${this.repoUrl}/nodes/${category}/${nodeId}/README.md`;
+    const res = await fetch(url);
+    return res.text();
   }
 
   getNodeIconUrl(category, nodeId) {
