@@ -1,0 +1,68 @@
+{
+  "id": "file-info-node",
+  "name": "File Info",
+  "author": "system",
+  "version": "1.1.0",
+  "description": "读取文件基本信息（名称、路径、大小、尺寸、页数、字数等），支持接收上游文件路径并输出为独立字段。",
+  "category": "Utils",
+  "node_class": "FileInfoNode",
+  "inputs": [
+    {
+      "name": "file",
+      "type": "FILE",
+      "description": "输入文件路径（可由上游连线提供）"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "basename",
+      "type": "STRING",
+      "description": "文件名（不含路径）"
+    },
+    {
+      "name": "extension",
+      "type": "STRING",
+      "description": "文件扩展名（不含点）"
+    },
+    {
+      "name": "size",
+      "type": "STRING",
+      "description": "人类可读文件大小（如 1.23 MB）"
+    },
+    {
+      "name": "size_bytes",
+      "type": "INT",
+      "description": "文件大小（字节）"
+    },
+    {
+      "name": "width",
+      "type": "INT",
+      "description": "图片宽度（像素，非图片为 0）"
+    },
+    {
+      "name": "height",
+      "type": "INT",
+      "description": "图片高度（像素，非图片为 0）"
+    },
+    {
+      "name": "pages",
+      "type": "INT",
+      "description": "页数（图片/PDF，多页 GIF 为帧数）"
+    },
+    {
+      "name": "word_count",
+      "type": "INT",
+      "description": "字数（文本文件有效）"
+    },
+    {
+      "name": "mime_type",
+      "type": "STRING",
+      "description": "MIME 类型"
+    },
+    {
+      "name": "exists",
+      "type": "BOOLEAN",
+      "description": "文件是否存在"
+    }
+  ]
+}

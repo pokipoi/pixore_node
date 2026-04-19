@@ -1,0 +1,24 @@
+{
+  "id": "path-collector",
+  "name": "Path Collector",
+  "author": "builtin",
+  "version": "1.0.0",
+  "description": "将多条连线传入的文件路径收集为列表，供下游节点（如 SVN Upload）批量使用",
+  "category": "Utils",
+  "entry_point": "main.py",
+  "node_class": "PathCollectorNode",
+  "inputs": [
+    { "name": "path_0", "type": "STRING", "default": "", "description": "路径 0" },
+    { "name": "path_1", "type": "STRING", "default": "", "description": "路径 1" },
+    { "name": "path_2", "type": "STRING", "default": "", "description": "路径 2" },
+    { "name": "path_3", "type": "STRING", "default": "", "description": "路径 3" },
+    { "name": "path_4", "type": "STRING", "default": "", "description": "路径 4" },
+    { "name": "path_5", "type": "STRING", "default": "", "description": "路径 5" },
+    { "name": "path_6", "type": "STRING", "default": "", "description": "路径 6" },
+    { "name": "path_7", "type": "STRING", "default": "", "description": "路径 7" }
+  ],
+  "outputs": [
+    { "name": "paths", "type": "FILES", "description": "收集到的有效路径列表" },
+    { "name": "count", "type": "INT",   "description": "有效路径数量" }
+  ]
+}

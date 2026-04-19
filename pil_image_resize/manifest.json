@@ -1,0 +1,79 @@
+{
+  "id": "pil-image-resize",
+  "name": "Image Resize (PIL)",
+  "author": "resizepic_fluent",
+  "version": "2.0.0",
+  "description": "图片缩放节点，支持像素/百分比、stretch/fit/fill 三种缩放模式和多种插值算法。fit 模式可选黑/白/透明填充。",
+  "category": "Image",
+  "node_class": "PILImageResize",
+  "inputs": [
+    {
+      "name": "image",
+      "type": "IMAGE",
+      "description": "待缩放的图片"
+    },
+    {
+      "name": "measurement",
+      "type": "STRING",
+      "default": "pixels",
+      "options": ["pixels", "percentage"],
+      "description": "尺寸单位: pixels(像素) 或 percentage(百分比)"
+    },
+    {
+      "name": "width",
+      "type": "INT",
+      "default": 512,
+      "min": 0,
+      "max": 16384,
+      "step": 1,
+      "description": "目标宽度。设为 0 则根据高度等比计算"
+    },
+    {
+      "name": "height",
+      "type": "INT",
+      "default": 512,
+      "min": 0,
+      "max": 16384,
+      "step": 1,
+      "description": "目标高度。设为 0 则根据宽度等比计算"
+    },
+    {
+      "name": "fit",
+      "type": "STRING",
+      "default": "fit",
+      "options": ["stretch", "fit", "fill"],
+      "description": "缩放模式: stretch(直接拉伸), fit(等比缩放+画布居中), fill(等比缩放+中心裁剪)"
+    },
+    {
+      "name": "pad_color",
+      "type": "STRING",
+      "default": "black",
+      "options": ["black", "white", "transparent"],
+      "description": "fit 模式下画布空白区域的填充颜色。transparent 时输出 RGBA"
+    },
+    {
+      "name": "method",
+      "type": "STRING",
+      "default": "lanczos",
+      "options": ["lanczos", "bilinear", "bicubic", "nearest", "box"],
+      "description": "缩放算法: lanczos(高质量), bilinear(双线性), bicubic(双三次), nearest(最近邻), box(适合缩小)"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "image",
+      "type": "IMAGE",
+      "description": "处理后的图片"
+    },
+    {
+      "name": "width",
+      "type": "INT",
+      "description": "输出图片的实际宽度"
+    },
+    {
+      "name": "height",
+      "type": "INT",
+      "description": "输出图片的实际高度"
+    }
+  ]
+}

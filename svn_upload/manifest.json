@@ -1,0 +1,22 @@
+{
+  "id": "svn-upload",
+  "name": "SVN Upload",
+  "author": "builtin",
+  "version": "1.0.0",
+  "description": "将文件列表提交到 SVN 仓库（svn add + svn commit）",
+  "category": "Output",
+  "entry_point": "main.py",
+  "node_class": "SVNUploadNode",
+  "inputs": [
+    { "name": "paths",       "type": "FILES",   "description": "要上传的文件路径列表（来自 PathCollector）" },
+    { "name": "repo_url",    "type": "STRING",  "default": "", "description": "SVN 仓库 URL，留空则使用文件所在工作副本" },
+    { "name": "commit_msg",  "type": "STRING",  "default": "Auto commit by workflow", "description": "提交说明" },
+    { "name": "username",    "type": "STRING",  "default": "", "description": "SVN 用户名（留空使用系统凭据）" },
+    { "name": "password",    "type": "STRING",  "default": "", "description": "SVN 密码（留空使用系统凭据）" },
+    { "name": "verify_exists", "type": "BOOLEAN", "default": true, "description": "提交前验证文件存在，防止上传不完整" }
+  ],
+  "outputs": [
+    { "name": "status",      "type": "STRING",  "description": "执行结果描述" },
+    { "name": "committed",   "type": "INT",     "description": "成功提交的文件数" }
+  ]
+}
