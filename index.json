@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-04-20T00:01:44.229799",
+  "generated": "2026-04-20T19:51:47.238173",
   "categories": {
     "default": {
       "count": 6,
@@ -25,9 +25,9 @@
       "tags": [],
       "rating": 0.0,
       "downloads": 0,
-      "icon": "nodes/default/file-info-node/icon.png",
-      "manifestUrl": "nodes/default/file-info-node/manifest.json",
-      "readmeUrl": "nodes/default/file-info-node/README.md"
+      "icon": "nodes/default/file_info/icon.png",
+      "manifestUrl": "nodes/default/file_info/manifest.json",
+      "readmeUrl": "nodes/default/file_info/README.md"
     },
     {
       "id": "file-input-node",
@@ -39,9 +39,9 @@
       "tags": [],
       "rating": 0.0,
       "downloads": 0,
-      "icon": "nodes/default/file-input-node/icon.png",
-      "manifestUrl": "nodes/default/file-input-node/manifest.json",
-      "readmeUrl": "nodes/default/file-input-node/README.md"
+      "icon": "nodes/default/file_input/icon.png",
+      "manifestUrl": "nodes/default/file_input/manifest.json",
+      "readmeUrl": "nodes/default/file_input/README.md"
     },
     {
       "id": "path-collector",
@@ -53,9 +53,9 @@
       "tags": [],
       "rating": 0.0,
       "downloads": 0,
-      "icon": "nodes/default/path-collector/icon.png",
-      "manifestUrl": "nodes/default/path-collector/manifest.json",
-      "readmeUrl": "nodes/default/path-collector/README.md"
+      "icon": "nodes/default/path_collector/icon.png",
+      "manifestUrl": "nodes/default/path_collector/manifest.json",
+      "readmeUrl": "nodes/default/path_collector/README.md"
     },
     {
       "id": "pil-image-resize",
@@ -67,9 +67,9 @@
       "tags": [],
       "rating": 0.0,
       "downloads": 0,
-      "icon": "nodes/default/pil-image-resize/icon.png",
-      "manifestUrl": "nodes/default/pil-image-resize/manifest.json",
-      "readmeUrl": "nodes/default/pil-image-resize/README.md"
+      "icon": "nodes/default/pil_image_resize/icon.png",
+      "manifestUrl": "nodes/default/pil_image_resize/manifest.json",
+      "readmeUrl": "nodes/default/pil_image_resize/README.md"
     },
     {
       "id": "string-input",
@@ -81,9 +81,9 @@
       "tags": [],
       "rating": 0.0,
       "downloads": 0,
-      "icon": "nodes/default/string-input/icon.png",
-      "manifestUrl": "nodes/default/string-input/manifest.json",
-      "readmeUrl": "nodes/default/string-input/README.md"
+      "icon": "nodes/default/String_Input/icon.png",
+      "manifestUrl": "nodes/default/String_Input/manifest.json",
+      "readmeUrl": "nodes/default/String_Input/README.md"
     },
     {
       "id": "svn-upload",
@@ -95,9 +95,9 @@
       "tags": [],
       "rating": 0.0,
       "downloads": 0,
-      "icon": "nodes/default/svn-upload/icon.png",
-      "manifestUrl": "nodes/default/svn-upload/manifest.json",
-      "readmeUrl": "nodes/default/svn-upload/README.md"
+      "icon": "nodes/default/svn_upload/icon.png",
+      "manifestUrl": "nodes/default/svn_upload/manifest.json",
+      "readmeUrl": "nodes/default/svn_upload/README.md"
     }
   ]
 }
