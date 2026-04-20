@@ -58,8 +58,11 @@ def generate_index(nodes_dir: Path, output_file: Path, github_user: Optional[str
                     print(f"❌ Error: Missing fields {missing} in {manifest_path}")
                     continue
                 
-                # 构建索引项（简略样式）
                 node_id = manifest['id']
+                # 使用实际目录名构建路径（GitHub 大小写敏感）
+                dir_name = node_dir.name
+                
+                # 构建索引项（简略样式）
                 node_entry = {
                     'id': node_id,
                     'name': manifest['name'],
@@ -72,21 +75,21 @@ def generate_index(nodes_dir: Path, output_file: Path, github_user: Optional[str
                     'downloads': manifest.get('downloads', 0),
                 }
                 
-                # 如果提供了 GitHub 用户名，生成完整 URL
+                # 使用 dir_name（实际目录名）而非 node_id 构建路径
                 if github_user:
                     base_url = f"https://raw.githubusercontent.com/{github_user}/pixore_node/main"
-                    node_entry['icon'] = f"{base_url}/nodes/{category}/{node_id}/icon.png"
-                    node_entry['manifestUrl'] = f"{base_url}/nodes/{category}/{node_id}/manifest.json"
-                    node_entry['readmeUrl'] = f"{base_url}/nodes/{category}/{node_id}/README.md"
+                    node_entry['icon'] = f"{base_url}/nodes/{category}/{dir_name}/icon.png"
+                    node_entry['manifestUrl'] = f"{base_url}/nodes/{category}/{dir_name}/manifest.json"
+                    node_entry['readmeUrl'] = f"{base_url}/nodes/{category}/{dir_name}/README.md"
                 else:
-                    node_entry['icon'] = f"nodes/{category}/{node_id}/icon.png"
-                    node_entry['manifestUrl'] = f"nodes/{category}/{node_id}/manifest.json"
-                    node_entry['readmeUrl'] = f"nodes/{category}/{node_id}/README.md"
+                    node_entry['icon'] = f"nodes/{category}/{dir_name}/icon.png"
+                    node_entry['manifestUrl'] = f"nodes/{category}/{dir_name}/manifest.json"
+                    node_entry['readmeUrl'] = f"nodes/{category}/{dir_name}/README.md"
                 
                 index['nodes'].append(node_entry)
                 category_nodes.append(node_id)
                 
-                print(f"✅ Indexed: {category}/{node_id} v{node_entry['version']}")
+                print(f"✅ Indexed: {category}/{dir_name} (id: {node_id}) v{node_entry['version']}")
                 
             except json.JSONDecodeError as e:
                 print(f"❌ Error: Invalid JSON in {manifest_path}: {e}")
@@ -235,4 +238,3 @@ if __name__ == '__main__':
         index = generate_index(nodes_dir, index_file, github_user)
         print_summary(index)
         print(f"✨ Done! Push this to GitHub to update your node repository.")
-
